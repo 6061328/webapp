@@ -1,12 +1,14 @@
 <?php
-$host = "localhost";
-$dbname = "nieuwsbrief_db";
-$username = "root";
-$password = "";
 
-$conn = new mysqli($host, $username, $password, $dbname);
+$host = "mysql";
+$user = "root";
+$password = "root";
+$database = "nieuwsbrief_db";
 
-if ($conn->connect_error) {
-    die("Verbinding mislukt: " . $conn->connect_error);
+$conn = mysqli_connect($host, $user, $password, $database);
+
+if (!$conn) {
+    die("Verbinding mislukt: " . mysqli_connect_error());
 }
+
 ?>
